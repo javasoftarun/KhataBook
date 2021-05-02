@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ApnaKhataApplication {
 
 	public static void main(String[] args) {
+		System.out.println("Welcome to ApnaKhata");
 		SpringApplication.run(ApnaKhataApplication.class, args);
 	}
 

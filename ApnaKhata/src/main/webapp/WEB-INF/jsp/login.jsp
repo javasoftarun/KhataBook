@@ -46,7 +46,7 @@
                     <button type="submit" class="btn btn-primary btn-block enter-btn">Login</button>
                   </div>
                   
-                  <p class="sign-up">Create Your Room<a href="#"> Create Room</a></p>
+                  <p class="sign-up">Create Your Room<a href="/register"> Create Room</a></p>
                 </form>
               </div>
             </div>

@@ -11,4 +11,10 @@ public class MainController {
 		System.out.println("Hiiiiiiiii");
 		return "login";
 	}
+	
+	@GetMapping("/register")
+	public String registerPage() {
+		System.out.println("Hellololo");
+		return "register";
+	}
 }

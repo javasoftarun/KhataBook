@@ -17,4 +17,9 @@ public class MainController {
 		System.out.println("Hellololo");
 		return "register";
 	}
+	@GetMapping("/registration-process")
+	public String registerProcess() {
+		System.out.println("Hello");
+		return "";
+	}
 }

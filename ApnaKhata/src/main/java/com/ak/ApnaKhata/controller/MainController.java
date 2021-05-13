@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ak.ApnaKhata.beans.LoginRequestBean;
 import com.ak.ApnaKhata.beans.Users;
+import com.ak.ApnaKhata.repository.UserRepository;
 import com.ak.ApnaKhata.service.UserService;
 
 @Controller
@@ -17,6 +18,8 @@ public class MainController {
 
 	@Autowired
 	UserService userservice;
+	@Autowired
+	UserRepository userRepository;
 	
 	@GetMapping("/")
 	public String welcomePage() {
@@ -27,17 +30,27 @@ public class MainController {
 	public String registerPage() {
 		return "registration";
 	}
+	@GetMapping("/logout")
+	public String logout() {
+		return "login";
+	}
 	@PostMapping("/login-process")
 	public String loginProcess(@ModelAttribute LoginRequestBean login) {
 		if(login != null) {
 			System.out.println("----------Login process----------");
 			System.out.println("username = "+login.getUsername());
 			System.out.println("password = "+login.getPassword());
-			if(login.getUsername().equals("javasoft@gmail.com") && login.getPassword().equals("12345678")) {
-				System.out.println("Hiiiiiii");
-				return "dashboard";
-			}else {
+			//get the user
+			Users user = this.userRepository.findByUserName(login.getUsername());
+			
+			if(user!=null) {
+			
+				if(login.getUsername().equals(user.getEmail()) && login.getPassword().equals(user.getPassword())) {
+					System.out.println("Hiiiiiii");
+					return "dashboard";
+				}else {
 				return "login";
+				}
 			}
 		}
 		

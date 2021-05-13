@@ -1,8 +1,10 @@
 package com.ak.ApnaKhata.beans;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.UniqueConstraint;
 
 @Entity
 public class Users {
@@ -12,6 +14,7 @@ public class Users {
 	private int id;
 	private String roomname;
 	private String username;
+	@Column(unique = true)
 	private String email;
 	private String mobile;
 	private String password;
@@ -52,6 +55,11 @@ public class Users {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	@Override
+	public String toString() {
+		return "Users [id=" + id + ", roomname=" + roomname + ", username=" + username + ", email=" + email
+				+ ", mobile=" + mobile + ", password=" + password + "]";
 	}
 	
 	

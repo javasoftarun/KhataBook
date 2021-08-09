@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ak.ApnaKhata.beans.LoginRequestBean;
 import com.ak.ApnaKhata.beans.Users;
@@ -33,6 +34,11 @@ public class MainController {
 	@GetMapping("/logout")
 	public String logout() {
 		return "login";
+	}
+	@GetMapping("/hello")
+	@ResponseBody
+	public String hello() {
+		return "Hello Sandy The Crandy";
 	}
 	@PostMapping("/login-process")
 	public String loginProcess(@ModelAttribute LoginRequestBean login) {

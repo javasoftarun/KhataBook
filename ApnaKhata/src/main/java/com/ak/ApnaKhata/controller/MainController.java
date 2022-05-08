@@ -43,7 +43,7 @@ public class MainController {
 	@PostMapping("/login-process")
 	public String loginProcess(@ModelAttribute LoginRequestBean login) {
 		if(login != null) {
-			System.out.println("----------Login++++++++++++++ process----------");
+			System.out.println("----------Login++++++++++++++ process+++++----------");
 			System.out.println("username = "+login.getUsername());
 			System.out.println("password = "+login.getPassword());
 			//get the user

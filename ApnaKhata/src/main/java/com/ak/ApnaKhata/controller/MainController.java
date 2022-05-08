@@ -65,7 +65,7 @@ public class MainController {
 	
 	@PostMapping("/register-process")
 	public String registerProcess(@ModelAttribute Users user) {
-		System.out.println("------Register Process------");
+		System.out.println("------Register------------ Process------");
 		System.out.println(user.getEmail());
 		if(user != null) {
 			Users userDetails = userservice.registerUser(user);

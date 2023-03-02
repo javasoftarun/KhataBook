@@ -8,6 +8,8 @@ public class ApnaKhataApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ApnaKhataApplication.class, args);
+		System.out.println("hellow");
 	}
+	
 
 }

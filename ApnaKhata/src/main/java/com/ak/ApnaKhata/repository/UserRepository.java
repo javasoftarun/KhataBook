@@ -9,7 +9,9 @@ import com.ak.ApnaKhata.beans.Users;
 
 @Repository
 public interface UserRepository extends JpaRepository<Users, Integer> {
-	@Query("select u from Users u where u.email =:email")
+	
+	
+	@Query("select u from Users u where u.email =:email") 
 	public Users findByUserName(@Param("email")String email);
 
 }
